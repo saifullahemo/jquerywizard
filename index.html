@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holaa</title>
+
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                    <h2 id="heading">Sign Up Your User Account</h2>
+                    <p>Fill all form field to go to next step</p>
+                    <form id="msform">
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active" id="account"><strong>Account</strong></li>
+                            <li id="personal"><strong>Personal</strong></li>
+                            <li id="payment"><strong>Image</strong></li>
+                            <li id="confirm"><strong>Finish</strong></li>
+                        </ul>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> <br> <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Account Information:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 1 - 4</h2>
+                                    </div>
+                                </div> 
+                                <label class="fieldlabels">Email: *</label> 
+                                <input type="email" id="email" placeholder="Email Id" /> 
+                                <label class="fieldlabels">Username: *</label> 
+                                <input type="text" id="uname" placeholder="UserName" /> 
+                                <label class="fieldlabels">Password: *</label> 
+                                <input type="password" id="pwd" placeholder="Password" /> 
+                                <label class="fieldlabels">Confirm Password: *</label> 
+                                <input type="password" id="cpwd" placeholder="Confirm Password" />
+                            </div> 
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Personal Information:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 2 - 4</h2>
+                                    </div>
+                                </div> 
+                                <label class="fieldlabels">First Name: *</label> 
+                                <input type="text" id="fname" placeholder="First Name" /> 
+                                <label class="fieldlabels">Last Name: *</label> 
+                                <input type="text" id="lname" placeholder="Last Name" /> 
+                                <label class="fieldlabels">Contact No.: *</label> 
+                                <input type="text" id="phno" placeholder="Contact No." /> 
+                                <label class="fieldlabels">Alternate Contact No.: *</label> 
+                                <input type="text" id="phno_2" placeholder="Alternate Contact No." />
+                            </div> 
+                            <input type="button" name="next" class="next action-button" value="Next" /> 
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Description:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 3 - 4</h2>
+                                    </div>
+                                </div> 
+                                <label class="fieldlabels">Tell us your concern: *</label> 
+                                <input type="text" id="tc" placeholder="Tell us your concern:" /> 
+                                <label class="fieldlabels">Don't be studpid *</label> 
+                                <input type="text" id="ds" placeholder="Don't be studpid" /> 
+                            </div> 
+                            <input type="button" name="next" class="next action-button" value="Submit" /> 
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        </fieldset>
+
+                        
+                        <fieldset>
+                            <div style=" font-size: 30px;  color: rgb(32, 7, 63); text-align: center;">
+                            <h2>Here's Your data </h2>
+
+                            Email :    <span id="emailVal"></span><br> 
+                            User Name :<span id="userVal"></span><br>
+                            First name :<span id="fVal"></span><br>
+                            Last Name :<span id="lVal"></span><br>
+                            Phone no :<span id="pVal"></span><br>
+                            Alternate no :<span id="phnVal"></span><br>
+                             
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src='./custom.js'></script>
+</body>
+</html>
