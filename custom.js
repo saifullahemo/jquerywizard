@@ -49,6 +49,10 @@ function handleNextBtn(steps) {
     $(".next").click(function () {
 
         $("form").validate({
+
+            errorClass: "error fail-alert",
+            validClass: "valid success-alert",
+
             rules: {
                 pwd: {
                     minlength: 5
@@ -62,7 +66,13 @@ function handleNextBtn(steps) {
                 email:'Please enter valid mail address',
                 pwd: 'Please enter min 6 characters',
                 //cpwd:'Use same characters'
-            }
+            },
+
+            errorPlacement: function(error, element) {
+                element.prev('label').replaceWith(error);
+          }
+
+            
         });
 
         if ((!$("form").valid())) {
