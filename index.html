@@ -19,7 +19,7 @@
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <h2 id="heading">Sign Up Your User Account</h2>
                     <p>Fill all form field to go to next step</p>
-                    <form id="msform">
+                    <form id="msform" name="registration">
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="active" id="account"><strong>Account</strong></li>
@@ -40,16 +40,20 @@
                                         <h2 class="steps">Step 1 - 4</h2>
                                     </div>
                                 </div> 
-                                <label class="fieldlabels">Email: *</label> 
-                                <input type="email" id="email" placeholder="Email Id" /> 
-                                <label class="fieldlabels">Username: *</label> 
-                                <input type="text" id="uname" placeholder="UserName" /> 
-                                <label class="fieldlabels">Password: *</label> 
-                                <input type="password" id="pwd" placeholder="Password" /> 
-                                <label class="fieldlabels">Confirm Password: *</label> 
-                                <input type="password" id="cpwd" placeholder="Confirm Password" />
+                                <label class="fieldlabels">  </label> 
+                                <input type="email" id="email" name="email" placeholder="Email Id" required/> 
+
+                                <label class="fieldlabels">  </label> 
+                                <input type="text" id="username" name="username" placeholder="UserName" required/> 
+
+                                <label class="fieldlabels">  </label> 
+                                <input type="password" id="pwd" name="pwd" placeholder="Password" data-error="Have atleast 6 characters" required/>    
+
+                                <label class="fieldlabels">  </label> 
+                                <input type="password" id="cpwd" name="cpwd" placeholder="Confirm Password" data-match-error="Password don't match" data-match="#pwd" required/>
+
                             </div> 
-                            <input type="button" name="next" class="next action-button" value="Next" />
+                            <input type="button" name="next" class="next action-button"  value="Next" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -61,14 +65,18 @@
                                         <h2 class="steps">Step 2 - 4</h2>
                                     </div>
                                 </div> 
-                                <label class="fieldlabels">First Name: *</label> 
-                                <input type="text" id="fname" placeholder="First Name" /> 
-                                <label class="fieldlabels">Last Name: *</label> 
-                                <input type="text" id="lname" placeholder="Last Name" /> 
-                                <label class="fieldlabels">Contact No.: *</label> 
-                                <input type="text" id="phno" placeholder="Contact No." /> 
-                                <label class="fieldlabels">Alternate Contact No.: *</label> 
-                                <input type="text" id="phno_2" placeholder="Alternate Contact No." />
+                                <label class="fieldlabels"> </label> 
+                                <input type="text" id="fname" name="fname" placeholder="First Name" required/> 
+
+                                <label class="fieldlabels"> </label> 
+                                <input type="text" id="lname" name="lname" placeholder="Last Name" required/> 
+
+                                <label class="fieldlabels"> </label> 
+                                <input type="text" id="phno" name="phno" placeholder="Contact No." required/>
+
+                                <label class="fieldlabels"> </label> 
+                                <input type="text" id="phno_2" name="phno_2" placeholder="Alternate Contact No." />
+
                             </div> 
                             <input type="button" name="next" class="next action-button" value="Next" /> 
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -84,9 +92,11 @@
                                     </div>
                                 </div> 
                                 <label class="fieldlabels">Tell us your concern: *</label> 
-                                <input type="text" id="tc" placeholder="Tell us your concern:" /> 
+                                <input type="text" id="tc" name="tc" placeholder="Tell us your concern:" required/> 
+
                                 <label class="fieldlabels">Don't be studpid *</label> 
-                                <input type="text" id="ds" placeholder="Don't be studpid" /> 
+                                <input type="text" id="ds" name = "ds" placeholder="Don't be studpid" required/> 
+
                             </div> 
                             <input type="button" name="next" class="next action-button" value="Submit" /> 
                             <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
@@ -114,6 +124,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <script src='./custom.js'></script>
 </body>
 </html>

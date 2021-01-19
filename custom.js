@@ -1,14 +1,19 @@
 var email;
 var username;
+var firstname;
 
-var tc,ds,fname,lname,phno,phno_2;
+
+
+var tc, ds, uname, lname, phno, phno_2, pwd, cpwd;
 
 var current = 1;
 var current_fs, next_fs, previous_fs; //fieldsets
+var steps;
+
 $(document).ready(function () {
 
     var opacity;
-    
+
     var steps = $("fieldset").length;
 
     setProgressBar(current, steps);
@@ -18,9 +23,8 @@ $(document).ready(function () {
     handleSubmitBtn();
 
 
+
 });
-
-
 
 
 /**
@@ -39,8 +43,34 @@ function setProgressBar(curStep, steps) {
  * Event fired when clicking on the Next Button
  */
 function handleNextBtn(steps) {
+    // return false;
+    // console.log("hello world");
 
     $(".next").click(function () {
+
+        $("form").validate({
+            rules: {
+                pwd: {
+                    minlength: 5
+                },
+                cpwd: {
+                    minlength: 5,
+                    equalTo: "#pwd"
+                }
+            },
+            messages:{
+                email:'Please enter valid mail address',
+                pwd: 'Please enter min 6 characters',
+                //cpwd:'Use same characters'
+            }
+        });
+
+        if ((!$("form").valid())) {
+            return false;
+
+        }
+
+
 
         current_fs = $(this).parent();
         next_fs = $(this).parent().next();
@@ -67,30 +97,34 @@ function handleNextBtn(steps) {
         setProgressBar(++current, steps);
         console.log(current);
 
-        if(current == 2){
+        if (current == 2) {
             email = $('#email').val();
-            username = $('#uname').val();
-            
+            username = $('#username').val();
+
         }
-        if(current == 3){
-            fname = $('#fname').val();
+        if (current == 3) {
+
+            firstname = $('#fname').val();
             lname = $('#lname').val();
             phno = $('#phno').val();
             phno_2 = $('#phno_2').val();
         }
 
-        if(current == 4){
+        if (current == 4) {
             // console.log("I am INside this logic")
             // console.log(email)
-            // console.log(username)
+            //  console.log(firstname)
+
             $('#emailVal').text(email);
             $('#userVal').text(username);
-            $('#fval').text(fname);
-            $('#lval').text(lname);
-            $('#phnval').text(phno_2);
-            $('#pval').text(phno);
-            
+            $('#fVal').text(firstname);
+            $('#lVal').text(lname);
+            $('#phnVal').text(phno_2);
+            $('#pVal').text(phno);
+
         }
+
+
     });
 }
 
@@ -132,7 +166,7 @@ function handlePreviousBtn(steps) {
 /**
 * On Clicking the submit button
 */
-function handleSubmitBtn(){
+function handleSubmitBtn() {
     $(".submit").click(function () {
         //     $("#msform").submit();
         // return false;
